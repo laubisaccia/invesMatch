@@ -3,12 +3,12 @@ package com.example.invesmatch
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import com.example.invesmatch.utils.capitalizeString
+
 
 class InvestorProfileActivity : AppCompatActivity() {
 
@@ -28,7 +28,8 @@ class InvestorProfileActivity : AppCompatActivity() {
         val email = intent.getStringExtra("email")
 
         val textView = findViewById<TextView>(R.id.welcomeUser)
-        textView.text = "Hola $firstName"
+        textView.text = capitalizeString("Hola $firstName")
+
 
         val btnOk = findViewById<Button>(R.id.btnOk)
 
@@ -50,16 +51,16 @@ class InvestorProfileActivity : AppCompatActivity() {
             }else {
                 // Calcular puntaje total
                 //Lo inicializamos asi vamos sumando las respuestas
-                var puntajeTotal = 0
+                var totalScore = 0
 
-                    puntajeTotal += obtenerPuntaje(selectedExperienceId)
-                    puntajeTotal += obtenerPuntaje(selectedMonthSavingId)
-                    puntajeTotal += obtenerPuntaje(selectedSavingInvestmentId)
+                totalScore += getScore(selectedExperienceId)
+                totalScore += getScore(selectedMonthSavingId)
+                totalScore += getScore(selectedSavingInvestmentId)
 
 
                 val investorType = when {
-                    puntajeTotal <= 2 -> "Conservador"
-                    puntajeTotal <= 4 -> "Moderado"
+                    totalScore <= 2 -> "Conservador"
+                    totalScore <= 4 -> "Moderado"
                     else -> "Agresivo"
                 }
 
@@ -68,22 +69,16 @@ class InvestorProfileActivity : AppCompatActivity() {
                     putExtra("lastName", lastName)
                     putExtra("email", email)
                     putExtra("investorType", investorType)
-
                 }
                 startActivity(intent)
 
 
-                val mensaje = "Puntaje Total: $puntajeTotal Tipo de Inversor: $investorType"
-                Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
             }
-
 
         }
 
-
-
     }
-    private fun obtenerPuntaje(radioButtonId: Int): Int {
+    private fun getScore(radioButtonId: Int): Int {
         return when (radioButtonId) {
             R.id.rbNone, R.id.rbLess20, R.id.rbLess25 -> 0
             R.id.rbLow, R.id.rb20to50, R.id.rb25to65 -> 1

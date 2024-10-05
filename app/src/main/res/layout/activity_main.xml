@@ -44,15 +44,11 @@
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
-
     <Button
         android:id="@+id/btnNext"
         style="@style/PurpleButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Siguiente" />
-
-
-
 
 </LinearLayout>

@@ -40,7 +40,6 @@
                 android:layout_marginBottom="8dp"
                 android:text="Nuestra aplicación tiene como objetivo ayudar a los usuarios a comparar diferentes opciones de inversión, proporcionándoles herramientas para evaluar distintos escenarios financieros de manera práctica y sencilla. Sin embargo, no ofrecemos servicios de inversión ni asesoramiento financiero, y el uso de la app no garantiza resultados ni recomendaciones de inversión específicas." />
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,6 +116,7 @@
                 android:text="Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán reflejados en esta misma sección, por lo que te recomendamos revisarlos periódicamente." />
 
         </LinearLayout>
+
     </ScrollView>
 
 

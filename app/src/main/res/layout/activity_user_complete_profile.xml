@@ -51,10 +51,7 @@
             android:textSize="20sp"
             android:padding="8dp"
             android:layout_marginTop="8dp"
-            android:gravity="start"
-             />
-
-
+            android:gravity="start" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

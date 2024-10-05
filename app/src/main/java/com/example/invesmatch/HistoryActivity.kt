@@ -7,6 +7,8 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class HistoryActivity:AppCompatActivity() {
 
@@ -19,20 +21,21 @@ class HistoryActivity:AppCompatActivity() {
         val historyTextView = findViewById<TextView>(R.id.tvHistory)
         val listViewHistory = findViewById<ListView>(R.id.listViewHistory)
 
-
-        // Cargar las comparaciones guardadas
         val sharedPreferences = getSharedPreferences("recommendations", Context.MODE_PRIVATE)
-        val comparisons = sharedPreferences.getStringSet("lastRecommendations", mutableSetOf()) ?: mutableSetOf()
+        val gson = Gson()
+        val json = sharedPreferences.getString("comparisonsList", "[]")
+        val type = object : TypeToken<ArrayList<InvestmentComparisonActivity.ComparisonEntity>>() {}.type
+        val comparisonsList: ArrayList<InvestmentComparisonActivity.ComparisonEntity> = gson.fromJson(json, type)
+        Log.d("HistoryActivity", "Número de comparaciones cargadas: ${comparisonsList.size}")
 
 
-        val comparisonsList = comparisons.toList()
+        val comparisonsStringList = comparisonsList.map { comparison ->
+            "Entidad 1: ${comparison.entity1}, Ganancia 1: ${comparison.ganancia1}\n" +
+                    "Entidad 2: ${comparison.entity2}, Ganancia 2: ${comparison.ganancia2}"
+        }
 
-        Log.d("HistoryActivity", "Comparaciones: $comparisonsList")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, comparisonsList)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, comparisonsStringList)
         listViewHistory.adapter = adapter
-        Log.d("HistoryActivity", "Comparaciones: $comparisonsList")
-
-
 
     }
     override fun onSupportNavigateUp(): Boolean {

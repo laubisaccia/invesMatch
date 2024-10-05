@@ -127,7 +127,6 @@
             android:text="Entre el 25% y el 65%"
             style="@style/PurpleRadioButton"/>
 
-
         <RadioButton
             android:id="@+id/rbMore65"
             android:layout_width="wrap_content"
@@ -135,7 +134,6 @@
             android:text="Más del 65%"
             style="@style/PurpleRadioButton"/>
     </RadioGroup>
-
 
     <Button
         android:id="@+id/btnOk"

@@ -12,7 +12,7 @@
         android:textStyle="bold"
         android:textSize="24sp"
         android:layout_marginBottom="24dp"
-        android:gravity="center" />
+        android:gravity="start" />
 
     <TextView
         android:id="@+id/entityResult1"
@@ -20,9 +20,10 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:gravity="center"
+        android:gravity="start"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/investor_rounded_tag"
+        android:textColor="@color/purple"
+        android:background="@drawable/text_view_gray_background"
         />
 
     <TextView
@@ -31,7 +32,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"
-        android:gravity="center"
+        android:gravity="start"
         android:textSize="18sp" />
 
     <TextView
@@ -39,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:gravity="center"
+        android:gravity="start"
         android:layout_marginBottom="24dp"
         android:textSize="18sp" />
 
@@ -49,9 +50,10 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:gravity="center"
+        android:gravity="start"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/investor_rounded_tag"
+        android:textColor="@color/purple"
+        android:background="@drawable/text_view_gray_background"
         />
 
     <TextView
@@ -59,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:gravity="center"
+        android:gravity="start"
         android:layout_marginBottom="8dp"
         android:textSize="18sp" />
 
@@ -68,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:gravity="center"
+        android:gravity="start"
         android:layout_marginBottom="24dp"
         android:textSize="18sp" />
 
@@ -76,11 +78,11 @@
         android:id="@+id/recommendation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:gravity="start"
         android:layout_marginBottom="8dp"
+        android:textColor="@color/purple"
         android:background="@drawable/text_view_gray_background" />
-
 
 </LinearLayout>

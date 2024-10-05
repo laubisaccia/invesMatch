@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.invesmatch.utils.capitalizeString
+
 
 class UserProfileActivity : AppCompatActivity (){
 
@@ -16,20 +18,16 @@ class UserProfileActivity : AppCompatActivity (){
 
         val firstName = intent.getStringExtra("firstName")
         val lastName = intent.getStringExtra("lastName")
-        val email = intent.getStringExtra("email")
         val investorType = intent.getStringExtra("investorType")
 
         val welcomeMessage = findViewById<TextView>(R.id.tvWelcomeMessage)
-        welcomeMessage.text = "Bienvenido, $firstName $lastName"
+        welcomeMessage.text = capitalizeString("Bienvenido, $firstName $lastName")
 
         val textView = findViewById<TextView>(R.id.tvProfileSummary)
         textView.text = "PERFIL INVERSOR"
 
         val investorTypeView = findViewById<TextView>(R.id.tvInvestorType)
         investorTypeView.text = investorType
-
-//        val textView = findViewById<TextView>(R.id.tvProfileSummary)
-//        textView.text = " $firstName $lastName\n Tu perfil inversor es\n $investorType"
 
         val investmentComparison=findViewById<Button>(R.id.btnStart)
         investmentComparison.setOnClickListener{

@@ -1,8 +1,7 @@
 package com.example.invesmatch
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import com.example.invesmatch.utils.capitalizeString
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -30,11 +29,11 @@ class ResultActivity:AppCompatActivity() {
         val textViewGanancia2 = findViewById<TextView>(R.id.earn2)
         val textViewRoi2 = findViewById<TextView>(R.id.roi2)
 
-        textViewEntity1.text = entity1
+        textViewEntity1.text = capitalizeString("$entity1")
         textViewGanancia1.text = "Ganancia: $ganancia1"
         textViewRoi1.text = "ROI: $roi1"
 
-        textViewEntity2.text = entity2
+        textViewEntity2.text = capitalizeString("$entity2")
         textViewGanancia2.text = "Ganancia: $ganancia2"
         textViewRoi2.text = "ROI: $roi2"
 

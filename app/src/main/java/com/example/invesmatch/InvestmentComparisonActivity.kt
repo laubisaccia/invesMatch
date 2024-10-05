@@ -12,6 +12,8 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class InvestmentComparisonActivity:AppCompatActivity() {
 
@@ -77,7 +79,14 @@ class InvestmentComparisonActivity:AppCompatActivity() {
                     "Ambas ofrecen el mismo roi de $roi1"
                 }
 
-                saveCompare(recommendation)
+                saveCompare(this, entity1, entity2, ganancia1, ganancia2, roi1, roi2, recommendation)
+
+                etMoney.text.clear()
+                etDays.text.clear()
+                etEntity1.text.clear()
+                etTna1.text.clear()
+                etEntity2.text.clear()
+                etTna2.text.clear()
 
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("entity1", entity1)
@@ -94,22 +103,42 @@ class InvestmentComparisonActivity:AppCompatActivity() {
     }
 
 
+    data class ComparisonEntity(
+        val entity1: String,
+        val entity2: String,
+        val ganancia1: Float,
+        val ganancia2: Float,
+        val roi1: Float,
+        val roi2: Float,
+        val recommendation: String
+    )
 
-    fun saveCompare (recommendation:String){
-        val sharedPreferences= getSharedPreferences("recommendations", Context.MODE_PRIVATE)
-        val editor=sharedPreferences.edit()
 
-        val recommendations=sharedPreferences.getStringSet("lastRecommendations", mutableSetOf())?: mutableSetOf()
-        recommendations.add(recommendation)
-
-        if (recommendations.size > 5) {
-            recommendations.remove(recommendations.first())
-        }
-
-        editor.putStringSet("lastRecommendations", recommendations)
-        editor.apply()
-
+fun saveCompare(
+    context: Context,
+    entity1: String,
+    entity2: String,
+    ganancia1: Float,
+    ganancia2: Float,
+    roi1: Float,
+    roi2: Float,
+    recommendation: String
+) {
+    val sharedPreferences = context.getSharedPreferences("recommendations", Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    val gson = Gson()
+    val json = sharedPreferences.getString("comparisonsList", "[]")
+    val type = object : TypeToken<ArrayList<ComparisonEntity>>() {}.type
+    val comparisonsList: ArrayList<ComparisonEntity> = gson.fromJson(json, type)
+    val newComparison = ComparisonEntity(entity1, entity2, ganancia1, ganancia2, roi1, roi2, recommendation)
+    comparisonsList.add(newComparison)
+    if (comparisonsList.size > 5) {
+        comparisonsList.removeAt(0)
     }
+    val updatedJson = gson.toJson(comparisonsList)
+    editor.putString("comparisonsList", updatedJson)
+    editor.apply()}
+
 
     fun tnaCalculate (tna:Float,days:Int,money:Int):Float{
         val tnaDaily:Float= (tna/360)/100
