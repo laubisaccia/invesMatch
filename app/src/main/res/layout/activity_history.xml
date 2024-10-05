@@ -12,13 +12,15 @@
         android:textStyle="bold"
         android:textSize="24sp"
         android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:text="Aca van la history"/>
+        android:gravity="start"
+        android:text="Historial de comparaciones"/>
 
     <ListView
         android:id="@+id/listViewHistory"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:dividerHeight="8dp"
+        android:divider="@android:color/transparent"
         android:layout_weight="1" />
 
 </LinearLayout>

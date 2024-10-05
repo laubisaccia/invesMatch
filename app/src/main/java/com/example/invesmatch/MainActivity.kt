@@ -27,10 +27,14 @@ class MainActivity : AppCompatActivity() {
 
         val userData= getSharedPreferences("initialPref", Context.MODE_PRIVATE)
 
+        //Planteo este estado para saber si estaba logueado
         val wasPrevLogged = userData.getBoolean("isLogged",false)
 
         if(wasPrevLogged){
-//TBD
+            val intent = Intent(this, InvestmentComparisonActivity::class.java)
+            startActivity(intent)
+            finish()
+
         }
         btnStart.setOnClickListener{
             val userFirstName=etUserFirstname.text.toString()
@@ -40,6 +44,13 @@ class MainActivity : AppCompatActivity() {
             if(!android.util.Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()|| userLastName.isEmpty()||userFirstName.isEmpty()) {
                 Toast.makeText(this, "Ingresa datos validos", Toast.LENGTH_SHORT).show()
             }else{
+                //llamo a edit() que es una instancia para tener el objeto edit
+                //de donde puedo llamar metodos para modificar
+                val editor = userData.edit()
+                editor.putBoolean("isLogged", true)
+                editor.apply()
+
+
                 val intent = Intent(this, InvestorProfileActivity::class.java)
 
                 intent.putExtra("firstName", userFirstName)
