@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:layout_gravity="bottom">
+
+    <TextView
+        android:id="@+id/welcomeUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:gravity="start"
+        android:layout_marginBottom="24dp"
+       />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ahora vamos a conocer tu perfil inversor"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp"
+        android:gravity="start"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Qué experiencia tenés como inversionista?"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rgExperience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rbNone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ninguna"
+            style="@style/PurpleRadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rbLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Baja"
+            style="@style/PurpleRadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rbMidHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Media/Alta"
+            style="@style/PurpleRadioButton"/>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Qué porcentaje de tus ingresos mensuales ahorrás por mes?"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rgMonthSaving"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rbLess20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menos del 20%"
+            style="@style/PurpleRadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rb20to50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entre el 20% y el 50%"
+            style="@style/PurpleRadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rbMore50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mas del 50%"
+            style="@style/PurpleRadioButton"/>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Qué porcentaje de tus ahorros estás dispuesto a destinar a inversiones?"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rgSavingInvestment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rbLess25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menos del 25%"
+            style="@style/PurpleRadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rb25to65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entre el 25% y el 65%"
+            style="@style/PurpleRadioButton"/>
+
+
+        <RadioButton
+            android:id="@+id/rbMore65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Más del 65%"
+            style="@style/PurpleRadioButton"/>
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnOk"
+        style="@style/PurpleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGUIENTE"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

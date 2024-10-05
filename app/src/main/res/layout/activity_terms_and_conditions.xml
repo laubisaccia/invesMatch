@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!--Para poder scrollear en la pagina-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"
+                android:text="Terminos y Condiciones"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="¿Quiénes somos?"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="8dp"
+                android:text="Nuestra aplicación tiene como objetivo ayudar a los usuarios a comparar diferentes opciones de inversión, proporcionándoles herramientas para evaluar distintos escenarios financieros de manera práctica y sencilla. Sin embargo, no ofrecemos servicios de inversión ni asesoramiento financiero, y el uso de la app no garantiza resultados ni recomendaciones de inversión específicas." />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Uso de la Aplicación"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="8dp"
+                android:text="El propósito de esta aplicación es únicamente informativo. Los cálculos y comparaciones que aquí se presentan son aproximados y no deben interpretarse como consejos financieros ni recomendaciones para realizar inversiones." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Limitaciones de Responsabilidad"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="8dp"
+                android:text="El uso de esta aplicación es bajo tu propia responsabilidad. No nos hacemos responsables de pérdidas, daños o perjuicios derivados de las decisiones de inversión que tomes en función de la información proporcionada por la app. No somos responsables de las decisiones financieras que realices, y te recomendamos consultar con un asesor financiero profesional antes de tomar cualquier acción de inversión." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Datos Personales"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="8dp"
+                android:text="Al utilizar la aplicación, podríamos solicitarte algunos datos personales (como tu nombre, correo electrónico, y edad). Estos datos serán utilizados exclusivamente para mejorar tu experiencia en la app y no serán compartidos con terceros sin tu consentimiento." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Exoneración de Responsabilidad"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="8dp"
+                android:text="No garantizamos la exactitud o integridad de la información que aparece en esta aplicación, y no asumimos ninguna responsabilidad por cualquier error u omisión. Tampoco somos responsables por la interrupción o mal funcionamiento de la app por motivos técnicos o externos." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Modificaciones a los Términos y Condiciones"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="8dp"
+                android:text="Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán reflejados en esta misma sección, por lo que te recomendamos revisarlos periódicamente." />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

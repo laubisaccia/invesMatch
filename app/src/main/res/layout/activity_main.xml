@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hola, necesitamos tus datos"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginBottom="24dp"
+        android:gravity="start" />
+
+    <EditText
+        android:id="@+id/etUserFirstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/GrayEditText"
+        android:layout_marginBottom="16dp"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/etUserLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/GrayEditText"
+        android:layout_marginBottom="16dp"
+        android:hint="Apellido" />
+
+    <EditText
+        android:id="@+id/etUserEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/GrayEditText"
+        android:layout_marginBottom="16dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+
+    <Button
+        android:id="@+id/btnNext"
+        style="@style/PurpleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Siguiente" />
+
+
+
+
+</LinearLayout>

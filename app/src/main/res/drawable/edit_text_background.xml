@@ -1,0 +1,17 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Seleccionando el boton -->
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@color/gray" />
+            <stroke android:width="2dp" android:color="@color/purple" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+    <!-- Sin estado -->
+    <item>
+        <shape>
+            <solid android:color="@color/gray" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+</selector>
